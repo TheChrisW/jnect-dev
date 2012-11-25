@@ -22,6 +22,8 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
 import org.jnect.bodymodel.Body;
+import org.jnect.bodymodel.BodyHolder;
+import org.jnect.bodymodel.BodymodelFactory;
 import org.jnect.core.IBodyProvider;
 import org.jnect.core.KinectManager;
 import org.jnect.core.SpeechListener;
@@ -41,7 +43,7 @@ public class KinectManagerImpl implements KinectManager, KinectDataHandler {
 	private ConnectionManager connectionManager;
 
 	private SkeletonParser skeletonParser;
-	private Body body;
+	private BodyHolder bodyHolder;
 	private Map<SpeechListener, Set<String>> speechWords = new HashMap<SpeechListener, Set<String>>();
 	private Map<String, Set<SpeechListener>> filteredSpeechListeners = new HashMap<String, Set<SpeechListener>>();
 	private Set<SpeechListener> unfilteredSpeechListeners = new HashSet<SpeechListener>();
@@ -53,10 +55,12 @@ public class KinectManagerImpl implements KinectManager, KinectDataHandler {
 		this.connectionManager = new ProxyConnectionManager();
 		this.connectionManager.setDataHandler(this);
 		setUpBodyProvider();
-		body = bodyProvider.getBody();
+		bodyHolder = BodymodelFactory.eINSTANCE.createBodyHolder();
+		bodyHolder.getBodies().add(bodyProvider.getBody());
+		bodyHolder.getBodies().add(bodyProvider.getBody());
 		// body=BodymodelFactory.eINSTANCE.createBody();
 		// fillBody();
-		this.skeletonParser = new SkeletonParser(body);
+		this.skeletonParser = new SkeletonParser(bodyHolder);
 	}
 
 	private void setUpBodyProvider() {
@@ -97,7 +101,7 @@ public class KinectManagerImpl implements KinectManager, KinectDataHandler {
 
 	@Override
 	public Body getSkeletonModel() {
-		return body;
+		return bodyHolder.getBodies().get(0);
 	}
 
 	@Override

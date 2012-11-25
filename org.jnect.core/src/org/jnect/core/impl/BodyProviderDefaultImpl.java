@@ -27,11 +27,11 @@ import org.jnect.bodymodel.Spine;
 import org.jnect.core.IBodyProvider;
 
 public class BodyProviderDefaultImpl implements IBodyProvider {
-	Body body = createAndFillBody();
+	//Body body = createAndFillBody();
 
 	@Override
 	public Body getBody() {
-		return body;
+		return createAndFillBody();
 	}
 
 	@Override

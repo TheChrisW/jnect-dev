@@ -192,6 +192,34 @@ public interface BodymodelPackage extends EPackage {
 	int HUMAN_LINK_FEATURE_COUNT = 2;
 
 	/**
+	 * The meta object id for the '{@link org.jnect.bodymodel.impl.BodyHolderImpl <em>Body Holder</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.jnect.bodymodel.impl.BodyHolderImpl
+	 * @see org.jnect.bodymodel.impl.BodymodelPackageImpl#getBodyHolder()
+	 * @generated
+	 */
+	int BODY_HOLDER = 2;
+
+	/**
+	 * The feature id for the '<em><b>Bodies</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BODY_HOLDER__BODIES = 0;
+
+	/**
+	 * The number of structural features of the '<em>Body Holder</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BODY_HOLDER_FEATURE_COUNT = 1;
+
+	/**
 	 * The meta object id for the '{@link org.jnect.bodymodel.impl.BodyImpl <em>Body</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -199,7 +227,7 @@ public interface BodymodelPackage extends EPackage {
 	 * @see org.jnect.bodymodel.impl.BodymodelPackageImpl#getBody()
 	 * @generated
 	 */
-	int BODY = 2;
+	int BODY = 3;
 
 	/**
 	 * The feature id for the '<em><b>Head</b></em>' containment reference.
@@ -407,7 +435,7 @@ public interface BodymodelPackage extends EPackage {
 	 * @see org.jnect.bodymodel.impl.BodymodelPackageImpl#getHead()
 	 * @generated
 	 */
-	int HEAD = 3;
+	int HEAD = 4;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -498,7 +526,7 @@ public interface BodymodelPackage extends EPackage {
 	 * @see org.jnect.bodymodel.impl.BodymodelPackageImpl#getCenterShoulder()
 	 * @generated
 	 */
-	int CENTER_SHOULDER = 4;
+	int CENTER_SHOULDER = 5;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -589,7 +617,7 @@ public interface BodymodelPackage extends EPackage {
 	 * @see org.jnect.bodymodel.impl.BodymodelPackageImpl#getLeftShoulder()
 	 * @generated
 	 */
-	int LEFT_SHOULDER = 5;
+	int LEFT_SHOULDER = 6;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -680,7 +708,7 @@ public interface BodymodelPackage extends EPackage {
 	 * @see org.jnect.bodymodel.impl.BodymodelPackageImpl#getRightShoulder()
 	 * @generated
 	 */
-	int RIGHT_SHOULDER = 6;
+	int RIGHT_SHOULDER = 7;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -771,7 +799,7 @@ public interface BodymodelPackage extends EPackage {
 	 * @see org.jnect.bodymodel.impl.BodymodelPackageImpl#getLeftElbow()
 	 * @generated
 	 */
-	int LEFT_ELBOW = 7;
+	int LEFT_ELBOW = 8;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -862,7 +890,7 @@ public interface BodymodelPackage extends EPackage {
 	 * @see org.jnect.bodymodel.impl.BodymodelPackageImpl#getRightElbow()
 	 * @generated
 	 */
-	int RIGHT_ELBOW = 8;
+	int RIGHT_ELBOW = 9;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -953,7 +981,7 @@ public interface BodymodelPackage extends EPackage {
 	 * @see org.jnect.bodymodel.impl.BodymodelPackageImpl#getLeftWrist()
 	 * @generated
 	 */
-	int LEFT_WRIST = 9;
+	int LEFT_WRIST = 10;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -1044,7 +1072,7 @@ public interface BodymodelPackage extends EPackage {
 	 * @see org.jnect.bodymodel.impl.BodymodelPackageImpl#getRightWrist()
 	 * @generated
 	 */
-	int RIGHT_WRIST = 10;
+	int RIGHT_WRIST = 11;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -1135,7 +1163,7 @@ public interface BodymodelPackage extends EPackage {
 	 * @see org.jnect.bodymodel.impl.BodymodelPackageImpl#getLeftHand()
 	 * @generated
 	 */
-	int LEFT_HAND = 11;
+	int LEFT_HAND = 12;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -1226,7 +1254,7 @@ public interface BodymodelPackage extends EPackage {
 	 * @see org.jnect.bodymodel.impl.BodymodelPackageImpl#getRightHand()
 	 * @generated
 	 */
-	int RIGHT_HAND = 12;
+	int RIGHT_HAND = 13;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -1317,7 +1345,7 @@ public interface BodymodelPackage extends EPackage {
 	 * @see org.jnect.bodymodel.impl.BodymodelPackageImpl#getSpine()
 	 * @generated
 	 */
-	int SPINE = 13;
+	int SPINE = 14;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -1408,7 +1436,7 @@ public interface BodymodelPackage extends EPackage {
 	 * @see org.jnect.bodymodel.impl.BodymodelPackageImpl#getCenterHip()
 	 * @generated
 	 */
-	int CENTER_HIP = 14;
+	int CENTER_HIP = 15;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -1499,7 +1527,7 @@ public interface BodymodelPackage extends EPackage {
 	 * @see org.jnect.bodymodel.impl.BodymodelPackageImpl#getLeftHip()
 	 * @generated
 	 */
-	int LEFT_HIP = 15;
+	int LEFT_HIP = 16;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -1590,7 +1618,7 @@ public interface BodymodelPackage extends EPackage {
 	 * @see org.jnect.bodymodel.impl.BodymodelPackageImpl#getRightHip()
 	 * @generated
 	 */
-	int RIGHT_HIP = 16;
+	int RIGHT_HIP = 17;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -1681,7 +1709,7 @@ public interface BodymodelPackage extends EPackage {
 	 * @see org.jnect.bodymodel.impl.BodymodelPackageImpl#getLeftKnee()
 	 * @generated
 	 */
-	int LEFT_KNEE = 17;
+	int LEFT_KNEE = 18;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -1772,7 +1800,7 @@ public interface BodymodelPackage extends EPackage {
 	 * @see org.jnect.bodymodel.impl.BodymodelPackageImpl#getRightKnee()
 	 * @generated
 	 */
-	int RIGHT_KNEE = 18;
+	int RIGHT_KNEE = 19;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -1863,7 +1891,7 @@ public interface BodymodelPackage extends EPackage {
 	 * @see org.jnect.bodymodel.impl.BodymodelPackageImpl#getLeftAnkle()
 	 * @generated
 	 */
-	int LEFT_ANKLE = 19;
+	int LEFT_ANKLE = 20;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -1954,7 +1982,7 @@ public interface BodymodelPackage extends EPackage {
 	 * @see org.jnect.bodymodel.impl.BodymodelPackageImpl#getRightAnkle()
 	 * @generated
 	 */
-	int RIGHT_ANKLE = 20;
+	int RIGHT_ANKLE = 21;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -2045,7 +2073,7 @@ public interface BodymodelPackage extends EPackage {
 	 * @see org.jnect.bodymodel.impl.BodymodelPackageImpl#getLeftFoot()
 	 * @generated
 	 */
-	int LEFT_FOOT = 21;
+	int LEFT_FOOT = 22;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -2136,7 +2164,7 @@ public interface BodymodelPackage extends EPackage {
 	 * @see org.jnect.bodymodel.impl.BodymodelPackageImpl#getRightFoot()
 	 * @generated
 	 */
-	int RIGHT_FOOT = 22;
+	int RIGHT_FOOT = 23;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -2349,6 +2377,27 @@ public interface BodymodelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getHumanLink_Target();
+
+	/**
+	 * Returns the meta object for class '{@link org.jnect.bodymodel.BodyHolder <em>Body Holder</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Body Holder</em>'.
+	 * @see org.jnect.bodymodel.BodyHolder
+	 * @generated
+	 */
+	EClass getBodyHolder();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.jnect.bodymodel.BodyHolder#getBodies <em>Bodies</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Bodies</em>'.
+	 * @see org.jnect.bodymodel.BodyHolder#getBodies()
+	 * @see #getBodyHolder()
+	 * @generated
+	 */
+	EReference getBodyHolder_Bodies();
 
 	/**
 	 * Returns the meta object for class '{@link org.jnect.bodymodel.Body <em>Body</em>}'.
@@ -2912,6 +2961,24 @@ public interface BodymodelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference HUMAN_LINK__TARGET = eINSTANCE.getHumanLink_Target();
+
+		/**
+		 * The meta object literal for the '{@link org.jnect.bodymodel.impl.BodyHolderImpl <em>Body Holder</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.jnect.bodymodel.impl.BodyHolderImpl
+		 * @see org.jnect.bodymodel.impl.BodymodelPackageImpl#getBodyHolder()
+		 * @generated
+		 */
+		EClass BODY_HOLDER = eINSTANCE.getBodyHolder();
+
+		/**
+		 * The meta object literal for the '<em><b>Bodies</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BODY_HOLDER__BODIES = eINSTANCE.getBodyHolder_Bodies();
 
 		/**
 		 * The meta object literal for the '{@link org.jnect.bodymodel.impl.BodyImpl <em>Body</em>}' class.

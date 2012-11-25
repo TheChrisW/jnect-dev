@@ -69,7 +69,7 @@ public class ProxySkeletonConnectionProcessor extends ConnectionProcessor {
 				for (int i = 0; i < inputParts.length; i++) {
 					if (inputParts[i].contains(SkeletonParser.SKELETON_KEYWORD)) {
 						this.connectionDataHandler.handleSkeletonInput(inputParts[i]);
-						break; // TODO Do we want all skeleton frames collected
+						//break; // TODO Do we want all skeleton frames collected
 								// in 50ms or only one frame?
 					}
 				}

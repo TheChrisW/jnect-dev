@@ -12,7 +12,7 @@ package org.jnect.core.impl;
 
 import java.util.logging.Logger;
 
-import org.jnect.bodymodel.Body;
+import org.jnect.bodymodel.BodyHolder;
 import org.jnect.bodymodel.PositionedElement;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
@@ -24,14 +24,14 @@ public class SkeletonParser {
 	
 	private Logger logger = Logger.getLogger(this.getClass().getSimpleName());
 	
-	private Body body;
+	private BodyHolder bodyHolder;
 	
 	private int oldNumSkeletons = -1;
 	private int frame = -1;
 
 
-	public SkeletonParser(Body body) {
-		this.body = body;
+	public SkeletonParser(BodyHolder bodyHolder) {
+		this.bodyHolder = bodyHolder;
 	}
 	
 	public void reset() {
@@ -62,7 +62,7 @@ public class SkeletonParser {
 					Node data = skeletonData.item(j);
 					
 					if (data.getNodeName().equals("joint")) {
-						Joint joint = parseJoint(data);
+						Joint joint = parseJoint(data, i);
 						updateModel(joint);
 					}
 				}
@@ -70,7 +70,7 @@ public class SkeletonParser {
 		}
 	}
 
-	private Joint parseJoint(Node jointNode) {
+	private Joint parseJoint(Node jointNode, int numSkeleton) {
 		Joint joint = new Joint();
 		
 		NodeList data = jointNode.getChildNodes();
@@ -78,7 +78,7 @@ public class SkeletonParser {
 			Node jointData = data.item(k);
 			if (jointData.getNodeName().equals("jointId")) {
 				String jointId = jointData.getTextContent();
-				joint.part = getPositionedElement(jointId);
+				joint.part = getPositionedElement(jointId, numSkeleton);
 				
 			} else if (jointData.getNodeName().equals("positionX")) {
 				String posX = jointData.getTextContent().replace(',', '.');
@@ -95,47 +95,47 @@ public class SkeletonParser {
 		return joint;
 	}
 	
-	private PositionedElement getPositionedElement(String jointId) {
+	private PositionedElement getPositionedElement(String jointId, int numSkeleton) {
 		if (jointId.equals("Head")) {
-			return body.getHead();
+			return bodyHolder.getBodies().get(numSkeleton).getHead();
 		} else if (jointId.equals("HipCenter")) {
-			return body.getCenterHip();
+			return bodyHolder.getBodies().get(numSkeleton).getCenterHip();
 		} else if (jointId.equals("Spine")) {
-			return body.getSpine();
+			return bodyHolder.getBodies().get(numSkeleton).getSpine();
 		}  else if (jointId.equals("ShoulderCenter")) {
-			return body.getCenterShoulder();
+			return bodyHolder.getBodies().get(numSkeleton).getCenterShoulder();
 		} else if (jointId.equals("ShoulderLeft")) {
-			return body.getLeftShoulder();
+			return bodyHolder.getBodies().get(numSkeleton).getLeftShoulder();
 		} else if (jointId.equals("ElbowLeft")) {
-			return body.getLeftElbow();
+			return bodyHolder.getBodies().get(numSkeleton).getLeftElbow();
 		} else if (jointId.equals("WristLeft")) {
-			return body.getLeftWrist();
+			return bodyHolder.getBodies().get(numSkeleton).getLeftWrist();
 		} else if (jointId.equals("HandLeft")) {
-			return body.getLeftHand();
+			return bodyHolder.getBodies().get(numSkeleton).getLeftHand();
 		} else if (jointId.equals("ShoulderRight")) {
-			return body.getRightShoulder();
+			return bodyHolder.getBodies().get(numSkeleton).getRightShoulder();
 		} else if (jointId.equals("ElbowRight")) {
-			return body.getRightElbow();
+			return bodyHolder.getBodies().get(numSkeleton).getRightElbow();
 		} else if (jointId.equals("WristRight")) {
-			return body.getRightWrist();
+			return bodyHolder.getBodies().get(numSkeleton).getRightWrist();
 		} else if (jointId.equals("HandRight")) {
-			return body.getRightHand();
+			return bodyHolder.getBodies().get(numSkeleton).getRightHand();
 		} else if (jointId.equals("HipLeft")) {
-			return body.getLeftHip();
+			return bodyHolder.getBodies().get(numSkeleton).getLeftHip();
 		} else if (jointId.equals("KneeLeft")) {
-			return body.getLeftKnee();
+			return bodyHolder.getBodies().get(numSkeleton).getLeftKnee();
 		} else if (jointId.equals("AnkleLeft")) {
-			return body.getLeftAnkle();
+			return bodyHolder.getBodies().get(numSkeleton).getLeftAnkle();
 		} else if (jointId.equals("FootLeft")) {
-			return body.getLeftFoot();
+			return bodyHolder.getBodies().get(numSkeleton).getLeftFoot();
 		} else if (jointId.equals("HipRight")) {
-			return body.getRightHip();
+			return bodyHolder.getBodies().get(numSkeleton).getRightHip();
 		} else if (jointId.equals("KneeRight")) {
-			return body.getRightKnee();
+			return bodyHolder.getBodies().get(numSkeleton).getRightKnee();
 		} else if (jointId.equals("AnkleRight")) {
-			return body.getRightAnkle();
+			return bodyHolder.getBodies().get(numSkeleton).getRightAnkle();
 		} else if (jointId.equals("FootRight")) {
-			return body.getRightFoot();
+			return bodyHolder.getBodies().get(numSkeleton).getRightFoot();
 		}
 		
 		// TODO Throw proper Exception here

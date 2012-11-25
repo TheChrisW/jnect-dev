@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="bodymodel"
-    nsURI="http://org/jnect/bodymodel" nsPrefix="org.jnect.bodymodel">
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="bodymodel" nsURI="http://org/jnect/bodymodel" nsPrefix="org.jnect.bodymodel">
   <eClassifiers xsi:type="ecore:EClass" name="PositionedElement" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
@@ -18,6 +16,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="HumanLink">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//PositionedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//PositionedElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BodyHolder">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Bodies" upperBound="-1"
+        eType="#//Body" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Body">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Head" lowerBound="1" eType="#//Head"

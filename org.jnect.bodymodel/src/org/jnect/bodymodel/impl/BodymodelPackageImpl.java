@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.jnect.bodymodel.Body;
+import org.jnect.bodymodel.BodyHolder;
 import org.jnect.bodymodel.BodymodelFactory;
 import org.jnect.bodymodel.BodymodelPackage;
 import org.jnect.bodymodel.CenterHip;
@@ -63,6 +64,13 @@ public class BodymodelPackageImpl extends EPackageImpl implements BodymodelPacka
 	 * @generated
 	 */
 	private EClass humanLinkEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass bodyHolderEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -378,6 +386,24 @@ public class BodymodelPackageImpl extends EPackageImpl implements BodymodelPacka
 	 */
 	public EReference getHumanLink_Target() {
 		return (EReference)humanLinkEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBodyHolder() {
+		return bodyHolderEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBodyHolder_Bodies() {
+		return (EReference)bodyHolderEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -800,6 +826,9 @@ public class BodymodelPackageImpl extends EPackageImpl implements BodymodelPacka
 		createEReference(humanLinkEClass, HUMAN_LINK__SOURCE);
 		createEReference(humanLinkEClass, HUMAN_LINK__TARGET);
 
+		bodyHolderEClass = createEClass(BODY_HOLDER);
+		createEReference(bodyHolderEClass, BODY_HOLDER__BODIES);
+
 		bodyEClass = createEClass(BODY);
 		createEReference(bodyEClass, BODY__HEAD);
 		createEReference(bodyEClass, BODY__CENTER_SHOULDER);
@@ -927,6 +956,9 @@ public class BodymodelPackageImpl extends EPackageImpl implements BodymodelPacka
 		initEClass(humanLinkEClass, HumanLink.class, "HumanLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getHumanLink_Source(), this.getPositionedElement(), null, "source", null, 0, 1, HumanLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getHumanLink_Target(), this.getPositionedElement(), null, "target", null, 0, 1, HumanLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(bodyHolderEClass, BodyHolder.class, "BodyHolder", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBodyHolder_Bodies(), this.getBody(), null, "Bodies", null, 0, -1, BodyHolder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(bodyEClass, Body.class, "Body", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBody_Head(), this.getHead(), null, "Head", null, 1, 1, Body.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

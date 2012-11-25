@@ -39,6 +39,15 @@ public interface BodymodelFactory extends EFactory {
 	HumanLink createHumanLink();
 
 	/**
+	 * Returns a new object of class '<em>Body Holder</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Body Holder</em>'.
+	 * @generated
+	 */
+	BodyHolder createBodyHolder();
+
+	/**
 	 * Returns a new object of class '<em>Body</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

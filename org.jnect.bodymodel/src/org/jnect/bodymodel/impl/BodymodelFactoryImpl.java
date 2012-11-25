@@ -65,6 +65,7 @@ public class BodymodelFactoryImpl extends EFactoryImpl implements BodymodelFacto
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case BodymodelPackage.HUMAN_LINK: return createHumanLink();
+			case BodymodelPackage.BODY_HOLDER: return createBodyHolder();
 			case BodymodelPackage.BODY: return createBody();
 			case BodymodelPackage.HEAD: return createHead();
 			case BodymodelPackage.CENTER_SHOULDER: return createCenterShoulder();
@@ -99,6 +100,16 @@ public class BodymodelFactoryImpl extends EFactoryImpl implements BodymodelFacto
 	public HumanLink createHumanLink() {
 		HumanLinkImpl humanLink = new HumanLinkImpl();
 		return humanLink;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BodyHolder createBodyHolder() {
+		BodyHolderImpl bodyHolder = new BodyHolderImpl();
+		return bodyHolder;
 	}
 
 	/**

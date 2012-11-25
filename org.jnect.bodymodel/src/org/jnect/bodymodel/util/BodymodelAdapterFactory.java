@@ -84,6 +84,10 @@ public class BodymodelAdapterFactory extends AdapterFactoryImpl {
 				return createHumanLinkAdapter();
 			}
 			@Override
+			public Adapter caseBodyHolder(BodyHolder object) {
+				return createBodyHolderAdapter();
+			}
+			@Override
 			public Adapter caseBody(Body object) {
 				return createBodyAdapter();
 			}
@@ -212,6 +216,20 @@ public class BodymodelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createHumanLinkAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.jnect.bodymodel.BodyHolder <em>Body Holder</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.jnect.bodymodel.BodyHolder
+	 * @generated
+	 */
+	public Adapter createBodyHolderAdapter() {
 		return null;
 	}
 
