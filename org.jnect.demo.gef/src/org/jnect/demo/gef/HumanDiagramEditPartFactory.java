@@ -13,6 +13,7 @@ package org.jnect.demo.gef;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPartFactory;
 import org.jnect.bodymodel.Body;
+import org.jnect.bodymodel.BodyHolder;
 import org.jnect.bodymodel.HumanLink;
 import org.jnect.bodymodel.PositionedElement;
 
@@ -22,7 +23,9 @@ public class HumanDiagramEditPartFactory implements EditPartFactory {
 	public EditPart createEditPart(EditPart context, Object model) {
 		EditPart part = null;
 		 
-	    if(model instanceof Body) {
+		if(model instanceof BodyHolder) {
+		  part = new BodyContainerEditPart();
+		} else if(model instanceof Body) {
 	      part = new HumanContainerEditPart();
 	    } else if (model instanceof PositionedElement) {
 	    	part = new HumanDiagramEditPart();

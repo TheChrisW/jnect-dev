@@ -14,6 +14,7 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.gef.DefaultEditDomain;
 import org.eclipse.gef.ui.parts.GraphicalEditor;
 import org.jnect.bodymodel.Body;
+import org.jnect.bodymodel.BodyHolder;
 
 public class HumanDiagramGraphicalEditor extends GraphicalEditor {
 
@@ -38,6 +39,11 @@ public class HumanDiagramGraphicalEditor extends GraphicalEditor {
 	@Override
 	protected void initializeGraphicalViewer() {
 		// TODO Auto-generated method stub
+	}
+
+	public void setContents(BodyHolder bodyHolder) {
+		getGraphicalViewer().setContents(bodyHolder);
+		
 	}
 
 }

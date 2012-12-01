@@ -1,6 +1,7 @@
 package org.jnect.emfstore;
 
 import org.jnect.bodymodel.Body;
+import org.jnect.bodymodel.BodyHolder;
 import org.jnect.core.IBodyProvider;
 
 public class RecordingBodyProvider implements IBodyProvider {
@@ -9,6 +10,11 @@ public class RecordingBodyProvider implements IBodyProvider {
 	@Override
 	public Body getBody() {
 		return EMFStorage.getInstance().getRecordingBody();
+	}
+
+	@Override
+	public BodyHolder getBodyHolder() {
+		return EMFStorage.getInstance().getRecordingBodyHolder();
 	}
 
 	@Override

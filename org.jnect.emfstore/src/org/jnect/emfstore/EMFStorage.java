@@ -37,6 +37,7 @@ import org.eclipse.emf.emfstore.server.model.versioning.VersioningFactory;
 import org.eclipse.emf.emfstore.server.model.versioning.operations.AbstractOperation;
 import org.eclipse.emf.emfstore.server.model.versioning.operations.AttributeOperation;
 import org.jnect.bodymodel.Body;
+import org.jnect.bodymodel.BodyHolder;
 import org.jnect.bodymodel.BodymodelFactory;
 import org.jnect.bodymodel.CenterHip;
 import org.jnect.bodymodel.CenterShoulder;
@@ -77,6 +78,8 @@ public class EMFStorage extends Observable implements ICommitter {
 	private Body replayBody;
 	private Body recordingBody;
 	private Body outwardRecordingBody;
+	// TODO With new BodyHolder, replaying may not work anymore...
+	private BodyHolder outwardRecordingBodyHolder;
 
 	private List<ChangePackage> changePackages;
 	private boolean changePackagesUpdateNeeded;
@@ -108,6 +111,11 @@ public class EMFStorage extends Observable implements ICommitter {
 		replayBody = createAndFillBody();
 		outwardRecordingBody = createAndFillBody();
 		outwardRecordingBody.eAdapters().add(new BundleBodyChangesAdapter());
+		outwardRecordingBodyHolder = BodymodelFactory.eINSTANCE.createBodyHolder();
+		outwardRecordingBodyHolder.getBodies().add(outwardRecordingBody);
+		outwardRecordingBodyHolder.getBodies().get(0).eAdapters().add(new BundleBodyChangesAdapter());
+		outwardRecordingBodyHolder.getBodies().add(createAndFillBody());
+		outwardRecordingBodyHolder.getBodies().get(0).eAdapters().add(new BundleBodyChangesAdapter());
 		BODY_ELEMENTS_COUNT = outwardRecordingBody.eContents().size();
 		// 3 changes (x, y, z) in every body element
 		NEEDED_CHANGES = BODY_ELEMENTS_COUNT * 3;
@@ -312,6 +320,10 @@ public class EMFStorage extends Observable implements ICommitter {
 
 	public Body getRecordingBody() {
 		return outwardRecordingBody;
+	}
+	
+	public BodyHolder getRecordingBodyHolder() {
+		return outwardRecordingBodyHolder;
 	}
 
 	public Body getReplayingBody() {

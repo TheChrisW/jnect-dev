@@ -12,6 +12,7 @@
 package org.jnect.core;
 
 import org.jnect.bodymodel.Body;
+import org.jnect.bodymodel.BodyHolder;
 import org.jnect.core.impl.KinectManagerImpl;
 
 /**
@@ -50,6 +51,13 @@ public interface KinectManager {
 	 * @return {@link Body} - the skeleton model
 	 */
 	Body getSkeletonModel();
+	
+	/**
+	 * get BodyHolder - the list of all bodies
+	 * 
+	 * @return {@link BodyHolder} - the body holder
+	 */
+	BodyHolder getBodyHolder();
 
 	/**
 	 * starts the skeleton tracking

@@ -58,7 +58,7 @@ public class HumanDiagramEditPart extends AbstractGraphicalEditPart {
 	protected void refreshVisuals() {
 		final HumanPolylineConnectionAnchorFigure figure = (HumanPolylineConnectionAnchorFigure) getFigure();
 		PositionedElement model = (PositionedElement) getModel();
-		final HumanContainerEditPart parent = (HumanContainerEditPart) this
+		final BodyContainerEditPart parent = (BodyContainerEditPart) this
 				.getParent();
 
 		figure.getLable().setText(

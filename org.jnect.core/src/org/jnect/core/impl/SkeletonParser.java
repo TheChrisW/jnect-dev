@@ -44,7 +44,7 @@ public class SkeletonParser {
 		// TODO Possible NPE if document is invalid
 		Node frameNode = frameNodes.item(0);
 		int currentFrame = Integer.parseInt(frameNode.getTextContent());
-		if (currentFrame > this.frame) { // TODO I receive the same document multiple times
+		//if (currentFrame > this.frame) { // TODO I receive the same document multiple times
 			this.frame = currentFrame;
 			NodeList skeletons = doc.getElementsByTagName(SKELETON_KEYWORD);
 			
@@ -66,7 +66,7 @@ public class SkeletonParser {
 						updateModel(joint);
 					}
 				}
-			}
+			//}
 		}
 	}
 

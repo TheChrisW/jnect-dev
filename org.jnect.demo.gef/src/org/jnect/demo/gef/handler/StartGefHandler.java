@@ -24,7 +24,7 @@ public class StartGefHandler extends AbstractHandler {
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		KinectManager.INSTANCE.startSkeletonTracking();
-		((HumanDiagramGraphicalEditor) PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor()).setContent(KinectManager.INSTANCE.getSkeletonModel());
+		((HumanDiagramGraphicalEditor) PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor()).setContents(KinectManager.INSTANCE.getBodyHolder());
 		
 		return null;
 	}

@@ -1,6 +1,7 @@
 package org.jnect.core.impl;
 
 import org.jnect.bodymodel.Body;
+import org.jnect.bodymodel.BodyHolder;
 import org.jnect.bodymodel.BodymodelFactory;
 import org.jnect.bodymodel.CenterHip;
 import org.jnect.bodymodel.CenterShoulder;
@@ -27,11 +28,17 @@ import org.jnect.bodymodel.Spine;
 import org.jnect.core.IBodyProvider;
 
 public class BodyProviderDefaultImpl implements IBodyProvider {
-	//Body body = createAndFillBody();
+	Body body = createAndFillBody();
 
 	@Override
 	public Body getBody() {
-		return createAndFillBody();
+		return body;
+	}
+	
+	@Override
+	public BodyHolder getBodyHolder() {
+		//TODO Maybe return new BodyHolder? Is this class even used?
+		return null;
 	}
 
 	@Override
@@ -132,4 +139,5 @@ public class BodyProviderDefaultImpl implements IBodyProvider {
 	public void startStopRecoring(boolean on) {
 		// do nothing, as the default impl does not record
 	}
+
 }

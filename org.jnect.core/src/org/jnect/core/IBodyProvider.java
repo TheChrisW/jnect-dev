@@ -1,10 +1,13 @@
 package org.jnect.core;
 
 import org.jnect.bodymodel.Body;
+import org.jnect.bodymodel.BodyHolder;
 
 public interface IBodyProvider {
 
 	public Body getBody();
+	
+	public BodyHolder getBodyHolder();
 
 	/**
 	 * Toggles the recording state.
